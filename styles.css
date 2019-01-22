@@ -1,0 +1,262 @@
+
+.secondColour {
+    color: rgb(200, 0, 0);
+}
+
+.thirdColour {
+    color: rgb(255, 232, 231);
+}
+
+.baseColour{
+    color: rgb(0, 0, 0);
+}
+
+h3 {
+    font-weight: 400;
+}
+
+hr{
+    border-width: 3px;
+    color: black;
+    border-style: solid;
+    margin-top: -1em;
+}
+
+body{
+    margin: 0;
+    padding-bottom: 4em;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 6fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas: 
+        "header header header header"
+        "nav nav nav nav"
+        "main main main main";
+    height: 100vh;
+    font-family: 'Barlow', sans-serif;
+}
+
+header {
+    grid-area: header;
+    background-color: rgb(255,70,0);
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr 1.5fr;
+    grid-template-areas: 
+        ". c s ."
+
+}
+
+#contact{
+    grid-area: c;
+    padding: 0.2em 0;
+    font-weight: 600;
+    font-size: 16px;
+    align-self: center;
+}
+
+#signIn {
+    grid-area: s;
+    padding: 0.2em 0;
+    text-align: right;
+    font-weight: 600;
+    font-size: 16px;
+    align-self: center;
+}
+
+nav {
+    grid-area: nav;
+    background-color:  rgb(247,247,247);;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr 1.5fr;
+    grid-template-areas: 
+        ". l n ."
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-section1{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+  
+.dropdown-section1 a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-section1 a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-section1 {display: block;}
+
+#logo {
+    grid-area: l;
+    align-self: center;
+    font-size: 43px;
+    font-weight: 600;
+    letter-spacing: -3px;
+    
+}
+
+#navList {
+    grid-area: n;
+    padding: 0.2em 0;
+    font-weight: 500;
+    font-size: 11px;
+    list-style:none;
+    display: flex;
+    justify-content: space-around; 
+    align-self: center;
+}
+
+#navList li:hover {
+    font-weight: 700;
+    text-decoration: underline rgb(255,70,0) ;
+}
+
+main {
+    padding-top: 3em;
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr 1.5fr;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: 
+        ". mainTop mainTop ."
+        ". mainBody1 mainBody2 ."
+}
+
+#mainTop {
+    grid-area: mainTop;
+}
+
+#breadcrumbs {
+    color: rgb(151,151,151);
+}
+
+#mainBody1 {
+    grid-area: mainBody1;
+    padding-right: 1em;   
+}
+
+input[type=text], input[type=password] {
+    width: 95%;
+    padding: 10px 6px;
+    margin: 2px 0 15px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  button {
+    background-color: rgb(255,70,0);
+    color: white;
+    padding: 10px 16px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+
+#mainBody2 {
+    grid-area: mainBody2;
+    padding-left: 3em;
+}
+
+#socials{
+    padding-top: 2em;
+}
+
+@media(max-width: 1024px){
+    .wrapper {
+        display: grid;
+        grid-template-rows: 1fr 1.5fr 6fr;
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-template-areas: 
+            "header header header header"
+            "nav nav nav nav"
+            "main main main main";
+    }
+
+    header {
+        grid-area: header;
+        background-color: rgb(255,70,0);
+        display: grid;
+        grid-template-columns: 1.5fr 2fr 4fr 1.5fr;
+        grid-template-areas: 
+            ". c s ."
+    
+    }
+
+    nav {
+        grid-area: nav;
+        background-color:  rgb(247,247,247);;
+        display: grid;
+        grid-template-columns: 1.5fr 2fr 4fr 1.5fr;
+        grid-template-areas: 
+            ". l n ."
+    }
+}
+
+@media(max-width: 771px){
+    nav {
+        grid-area: nav;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            ". l ."
+            ". n ."
+    }
+
+    #logo {
+        padding-top: 0.5em;
+        text-align: center;
+    }
+    
+    #navList {
+        text-align: center;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1.5fr 2fr 1.5fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
+        grid-template-areas: 
+            ". mainTop ."
+            ". mainBody1 ."
+            ". mainBody2 .";
+    }
+
+    #mainBody2 {
+        grid-area: mainBody2;
+        padding-left: 0em;
+    }
+
+    #centerBody {
+        text-align: center;
+    }
+}
